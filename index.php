@@ -1,39 +1,40 @@
 <?php 
-$angka = [1,2,3,5,4,2]
-
-?>
+   $mahasiswa =[
+    [
+        "nama" =>"dicky", 
+        "nik" => "412231", 
+        "jurusan" =>"informatika", 
+        "email" => "mail@com", 
+        "foto" => "a.jpg" ], 
+    [ 
+        "nama" =>"rixky", 
+    "nik" => "12331", 
+    "jurusan" =>"informasi",
+    "email" => "goog@com",
+    "foto" => "b.png" ], ]
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    .kotak {
-      height: 50px;
-      width: 50px;
-      background-color: salmon;
-      margin: 3px;
-      text-align: center;
-      line-height: 50px;
-      float: left;
-    }
-    .clear {
-      clear: both;
-    }
-  </style>
-  <body>
-    <?php for($i =0 ; $i < count($angka) ;$i++) {?>
-    <div class="kotak"><?php echo $angka[$i]; ?></div>
-    <?php } ?>
+    <title>GET</title>
+</head>
 
-    <div class="clear"></div>
+<body>
+    <ul>
+        <?php foreach($mahasiswa as $mhs) : ?>
+        <li>
+            <a href="get.php?nama= <?=$mhs["nama"]; ?>&nik=<?= $mhs['nik'];?>&jurusan=<?= $mhs["jurusan"];?>&email=<?= $mhs["email"];?>&foto=<?= $mhs["foto"] ?>
+            ">
+                <?= $mhs["nama"] ?>
+            </a>
+        </li>
+        <?php endforeach ?>
+    </ul>
+</body>
 
-    <?php foreach( $angka as $i) : ?>
-    <div class="kotak"><?= $i ; ?></div>
-    <?php endforeach?>
-  </body>
 </html>
